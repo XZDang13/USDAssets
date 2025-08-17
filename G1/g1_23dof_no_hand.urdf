@@ -1,4 +1,4 @@
-<robot name="g1_23dof_rev_1_0">
+<robot name="g1_23dof">
   <material name="dark">
     <color rgba="0.2 0.2 0.2 1"/>
   </material>

@@ -1,4 +1,4 @@
-<robot name="g1_23dof_rev_1_0">
+<robot name="g1_23dof">
   <material name="dark">
     <color rgba="0.2 0.2 0.2 1"/>
   </material>
@@ -672,10 +672,10 @@
 
   <joint name="left_rubber_hand_joint" type="fixed">
     <parent link="left_wrist_roll_link"/>
-    <child link="left_rubber_hand_link"/>
+    <child link="left_rubber_hand"/>
     <origin xyz="0.121 0.0055 0.0015" rpy="0 0 0"/>
   </joint>
-  <link name="left_rubber_hand_link">
+  <link name="left_rubber_hand">
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <mass value="0.1"/> <!-- adjust mass -->
@@ -832,10 +832,10 @@
   </link>
   <joint name="right_rubber_hand_joint" type="fixed">
     <parent link="right_wrist_roll_link"/>
-    <child link="right_rubber_hand_link"/>
+    <child link="right_rubber_hand"/>
     <origin xyz="0.121 -0.0055 0.0015" rpy="0 0 0"/>
   </joint>
-  <link name="right_rubber_hand_link">
+  <link name="right_rubber_hand">
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <mass value="0.1"/> <!-- adjust mass -->

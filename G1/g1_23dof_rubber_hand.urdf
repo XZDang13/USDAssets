@@ -646,10 +646,10 @@
     <origin xyz="0.100 0.00188791 -0.010" rpy="0 0 0"/>
     <axis xyz="1 0 0"/>
     <parent link="left_elbow_link"/>
-    <child link="left_wrist_roll_rubber_hand"/>
+    <child link="left_wrist_roll_link"/>
     <limit effort="25" velocity="37" lower="-1.972222054" upper="1.972222054"/>
   </joint>
-  <link name="left_wrist_roll_rubber_hand">
+  <link name="left_wrist_roll_link">
     <inertial>
       <origin xyz="0.10794656650 0.00163511945 0.00202244863" rpy="0 0 0"/>
       <mass value="0.35692864"/>
@@ -658,17 +658,43 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/left_wrist_roll_rubber_hand.STL"/>
+        <mesh filename="meshes/left_wrist_roll.STL"/>
       </geometry>
       <material name="white"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/left_wrist_roll_rubber_hand.STL"/>
+        <mesh filename="meshes/left_wrist_roll.STL"/>
       </geometry>
     </collision>
   </link>
+
+  <joint name="left_rubber_hand_joint" type="fixed">
+    <parent link="left_wrist_roll_link"/>
+    <child link="left_rubber_hand_link"/>
+    <origin xyz="0.121 0.0055 0.0015" rpy="0 0 0"/>
+  </joint>
+  <link name="left_rubber_hand_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.1"/> <!-- adjust mass -->
+      <inertia ixx="1E-06" iyy="1E-06" izz="1E-06" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/> <!-- adjust placement -->
+      <geometry>
+        <mesh filename="meshes/left_rubber_hand.STL"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/left_rubber_hand.STL"/>
+      </geometry>
+    </collision>
+  </link>
+
   <link name="right_shoulder_pitch_link">
     <inertial>
       <origin xyz="0 -0.035892 -0.011628" rpy="0 0 0"/>
@@ -781,10 +807,10 @@
     <origin xyz="0.100 -0.00188791 -0.010" rpy="0 0 0"/>
     <axis xyz="1 0 0"/>
     <parent link="right_elbow_link"/>
-    <child link="right_wrist_roll_rubber_hand"/>
+    <child link="right_wrist_roll_link"/>
     <limit effort="25" velocity="37" lower="-1.972222054" upper="1.972222054"/>
   </joint>
-  <link name="right_wrist_roll_rubber_hand">
+  <link name="right_wrist_roll_link">
     <inertial>
       <origin xyz="0.10794656650 -0.00163511945 0.00202244863" rpy="0 0 0"/>
       <mass value="0.35692864"/>
@@ -793,14 +819,38 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/right_wrist_roll_rubber_hand.STL"/>
+        <mesh filename="meshes/right_wrist_roll.STL"/>
       </geometry>
       <material name="white"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/right_wrist_roll_rubber_hand.STL"/>
+        <mesh filename="meshes/right_wrist_roll.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="right_rubber_hand_joint" type="fixed">
+    <parent link="right_wrist_roll_link"/>
+    <child link="right_rubber_hand_link"/>
+    <origin xyz="0.121 -0.0055 0.0015" rpy="0 0 0"/>
+  </joint>
+  <link name="right_rubber_hand_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.1"/> <!-- adjust mass -->
+      <inertia ixx="1E-06" iyy="1E-06" izz="1E-06" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/> <!-- adjust placement -->
+      <geometry>
+        <mesh filename="meshes/right_rubber_hand.STL"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/right_rubber_hand.STL"/>
       </geometry>
     </collision>
   </link>

@@ -1,0 +1,5 @@
+# Local binary data
+*.bin
+*.swp
+.DS_Store
+Thumbs.db
